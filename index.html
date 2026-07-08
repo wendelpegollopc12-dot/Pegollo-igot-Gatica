@@ -1,48 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Basic Ecommerce Demo</title>
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+  </div>
+
   <h1>Product Manager</h1>
 
   <section>
-    <h2>Add / Update Product</h2>
+    <h2 style="text-align: center;">Add / Update Product</h2>
 
     <input type="hidden" id="productId" />
 
-    <label>
-      Product Name
-      <input type="text" id="name" placeholder="Example: T-Shirt" />
-    </label>
+    <div class="box-input">
+      <div class="border">
+        <input type="text" id="name" class="input" placeholder="Product Name" />
+      </div>
+    </div>
 
-    <label>
-      Description
-      <input type="text" id="description" placeholder="Short product description" />
-    </label>
+    <div class="box-input">
+      <div class="border">
+        <input type="text" id="description" class="input" placeholder="Short description" />
+      </div>
+    </div>
 
-    <label>
-      Price in PHP
-      <input type="number" id="price" placeholder="Example: 250" />
-    </label>
+    <div class="box-input">
+      <div class="border">
+        <select id="category" class="input">
+          <option value="">Select Category</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Home">Home & Living</option>
+        </select>
+      </div>
+    </div>
 
-    <label>
-      Stock
-      <input type="number" id="stock" placeholder="Example: 10" />
-    </label>
+    <div class="box-input">
+      <div class="border">
+        <input type="number" id="price" class="input" placeholder="Price in PHP" />
+      </div>
+    </div>
 
-    <button onclick="saveProduct()">Save Product</button>
-    <button onclick="clearForm()">Clear</button>
+    <div class="box-input">
+      <div class="border">
+        <input type="number" id="stock" class="input" placeholder="Stock Quantity" />
+      </div>
+    </div>
+
+    <!-- New Advanced Buttons -->
+    <div class="buttons">
+      <button onclick="saveProduct()" class="button save-btn" data-tooltip="Save to Database">
+        <div class="text">Save Product</div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </button>
+
+      <button onclick="clearForm()" class="button clear-btn" data-tooltip="Reset Form">
+        <div class="text">Clear Form</div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6h12v12" />
+          </svg>
+        </div>
+      </button>
+    </div>
   </section>
 
-  <hr />
+  <hr style="max-width: 700px; width: 100%; margin: 30px auto;">
 
   <section>
-    <h2>Products</h2>
-    <div id="productList"></div>
+    <h2 style="text-align: center;">Products</h2>
+    <div id="productList" class="products-grid"></div>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
