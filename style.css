@@ -40,7 +40,7 @@
     }
 
     .border {
-      background-image: linear-gradient(to right bottom, #e300ff, #ff00aa, #ff5956, #ffb900, #fffe00);
+      background-image: linear-gradient(to right bottom, #e60d60, #ff00aa, #ff5956, #ffb900, #fffe00);
       box-shadow: -25px -10px 30px -5px rgba(225, 0, 255, 0.5),
                   25px -10px 30px -5px rgba(255, 0, 212, 0.5),
                   25px 10px 30px -5px rgba(255, 174, 0, 0.5),
@@ -120,7 +120,7 @@
 
     /* Save Button Color */
     .save-btn {
-      --button-color: #1875FF;
+      --button-color: #08f156;
       background: var(--button-color);
     }
 
